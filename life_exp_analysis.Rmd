@@ -1,0 +1,25 @@
+---
+author: "Elizabeth Dietze"
+title: "life_exp"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r }
+library(tidyverse)
+library(gapminder)
+library(dplyr)
+data("gapminder_unfiltered")
+```
+
+```{r }
+sumdata <- gapminder_unfiltered %>% 
+  group_by(year)%>% 
+  filter(lifeExp == max(lifeExp)) %>%
+  ungroup() %>%
+  select(year, country, lifeExp) %>%
+  arrange(year)
+```
