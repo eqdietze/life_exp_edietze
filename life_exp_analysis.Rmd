@@ -14,7 +14,7 @@ library(gapminder)
 library(dplyr)
 data("gapminder_unfiltered")
 ```
-This is my random comment. 
+This is my random comment. But it doesn't mean anything. 
 ```{r }
 sumdata <- gapminder_unfiltered %>% 
   group_by(year)%>% 
@@ -23,3 +23,5 @@ sumdata <- gapminder_unfiltered %>%
   select(year, country, lifeExp) %>%
   arrange(year)
 ```
+
+Another random comment. 
